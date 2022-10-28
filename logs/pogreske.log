@@ -1,0 +1,13 @@
+2022-10-28 12:21:36,905 ERROR [main] h.j.v.g.Glavna [Glavna.java:395] java.util.InputMismatchException
+java.util.InputMismatchException: null
+	at hr.java.vjezbe.glavna.Glavna.main(Glavna.java:395)
+2022-10-28 14:10:53,851 ERROR [main] h.j.v.g.Glavna [Glavna.java:424] java.util.InputMismatchException
+java.util.InputMismatchException: null
+	at hr.java.vjezbe.glavna.Glavna.main(Glavna.java:424)
+2022-10-28 14:12:38,452 ERROR [main] h.j.v.g.Glavna [Glavna.java:423] java.util.InputMismatchException
+java.util.InputMismatchException: null
+	at hr.java.vjezbe.glavna.Glavna.main(Glavna.java:423)
+2022-10-28 14:28:54,181 ERROR [main] h.j.v.g.Glavna [Glavna.java:423] java.util.InputMismatchException
+java.util.InputMismatchException: null
+	at hr.java.vjezbe.glavna.Glavna.main(Glavna.java:423)
+2022-10-28 14:36:28,608 ERROR [main] h.j.v.g.Glavna [Glavna.java:398] hr.java.vjezbe.iznimke.PostojiViseNajmadjihStudenataException: Pronadeno je vise najmladih studenata s istim datumom rodenja, a to su emil frankovic  i danka zupanovic 
