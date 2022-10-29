@@ -324,17 +324,6 @@ public class Glavna {
         Integer[] obrana = new Integer[ustanova.getStudenti().length];
         BigDecimal[] konacneOcjene = new BigDecimal[ustanova.getStudenti().length];
 
-        ObrazovnaUstanova faks;
-
-        if(ustanova instanceof FakultetRacunarstva){
-            faks = (FakultetRacunarstva) ustanova;
-        }else{
-             faks = (VeleucilisteJave) ustanova;
-        }
-
-        //PREKID
-
-
         for(int i = 0;i<ustanova.getStudenti().length;i++){
             boolean nastaviPetlju = false;
 
@@ -382,18 +371,14 @@ public class Glavna {
             System.out.println("Konacna ocjena studija studenta "+ ustanova.getStudenti()[i].getIme() + " " + ustanova.getStudenti()[i].getPrezime() + " je " + konacneOcjene[i]);
         }
 
-        int indexBest = 0;
-        for(int i = 1;i<konacneOcjene.length;i++){
-            if(konacneOcjene[i].compareTo(konacneOcjene[indexBest]) > 0){
-                indexBest = i;
-            }
-        }
 
-        System.out.println("Najbolji student 2022. godine je " + ustanova.getStudenti()[indexBest].getIme() + " " + ustanova.getStudenti()[indexBest].getPrezime() + " JMBAG: " + ustanova.getStudenti()[indexBest].getJmbag());
+        Student najuspjesniji = ustanova.odrediNajuspjesnijegStudentaNaGodini(2022);
 
-        if(faks instanceof FakultetRacunarstva){
+        System.out.println("Najbolji student 2022. godine je " + najuspjesniji.getIme() + " " + najuspjesniji.getPrezime() + " JMBAG: " + najuspjesniji.getJmbag());
+
+        if(ustanova instanceof FakultetRacunarstva){
             try{
-                System.out.println("Student koji je osvojio rektorovu nagradu je: " + ((FakultetRacunarstva) faks).odrediStudentaZaRektorovuNagradu().getIme() + " " + ((FakultetRacunarstva) faks).odrediStudentaZaRektorovuNagradu().getPrezime());
+                System.out.println("Student koji je osvojio rektorovu nagradu je: " + ((FakultetRacunarstva) ustanova).odrediStudentaZaRektorovuNagradu().getIme() + " " + ((FakultetRacunarstva) ustanova).odrediStudentaZaRektorovuNagradu().getPrezime());
             }catch (PostojiViseNajmadjihStudenataException e){
                 logger.error(String.valueOf(e.fillInStackTrace()));
                 System.out.println(e.getMessage());
