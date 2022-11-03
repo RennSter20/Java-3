@@ -1,5 +1,8 @@
 package hr.java.vjezbe.entitet;
 
+/**
+ * Abstraktna klasa koja sadrži naziv ustanove, sve predmete, profesore, studente i ispite koji su se pisali.
+ */
 public abstract class ObrazovnaUstanova {
 
     private String naziv;
@@ -8,7 +11,7 @@ public abstract class ObrazovnaUstanova {
     private Student[] studenti;
     private Ispit[] ispiti;
 
-    //4
+
     public abstract Student odrediNajuspjesnijegStudentaNaGodini(Integer godina);
 
     public ObrazovnaUstanova(String naziv, Predmet[] predmeti, Profesor[] profesori, Student[] studenti, Ispit[] ispiti) {

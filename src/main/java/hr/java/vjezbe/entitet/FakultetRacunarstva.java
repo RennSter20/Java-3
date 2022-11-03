@@ -9,6 +9,12 @@ import org.slf4j.LoggerFactory;
 import java.math.BigDecimal;
 import java.util.Arrays;
 
+/**
+ * Klasa FakultetRačunarstva nasljeđuje ObrazovnaUstanova i implementira sučelje Diplomski.
+ * Unutar klase implementirane su metode koje se koriste tijekom izvođenja programa u svrhu
+ * određivanja konačnih ocjena, najuspješnijeg studenta na fakultetu te određivanja studenta
+ * za rektorovu nagradu.
+ */
 public class FakultetRacunarstva extends ObrazovnaUstanova implements Diplomski {
 
     public static final Logger logger = LoggerFactory.getLogger(Glavna.class);
@@ -17,7 +23,15 @@ public class FakultetRacunarstva extends ObrazovnaUstanova implements Diplomski 
         super(naziv, predmeti, profesori, studenti, ispiti);
     }
 
-    //DONE
+    /**
+     *  U metodi se poziva metoda filtrirajIspitePoStudentu. Vraćena lista sadržava sve ispite koje je pisao navedeni student. Zatim pozivamo metodu odrediProsjekOcjenaNaIspitima koja vraća prosjek studenta na ispitima.
+     *  Metoda također sadrži try/catch dio koji hvata NemoguceOdreditiProsjekStudentaException u slučaju da student ima jednu ocjenu nedovoljan.
+     * @param ispiti svi ispiti
+     * @param pismeni ocjena pismenog ispita
+     * @param diplomski ocjena diplomskog
+     * @param student student za kojeg je potrebno izračunati konačnu ocjenu
+     * @return metoda vraća konačnu ocjenu.
+     */
     @Override
     public BigDecimal izracunajKonacnuOcjenuStudijaZaStudenta(Ispit[] ispiti, Integer pismeni, Integer diplomski, Student student) {
 
@@ -39,7 +53,11 @@ public class FakultetRacunarstva extends ObrazovnaUstanova implements Diplomski 
 
     }
 
-    //DONE
+    /**
+     * Metoda koja izdvaja studenta s najviše ocjenjenih ispita s ocjenom izvrstan. U slučaju da ima više njih, određuje se onaj s manjim indexom.
+     * @param godina godina za koju se određuje najuspješniji student na godini
+     * @return najuspješniji student određen prema ocjenama na ispitima
+     */
     @Override
     public Student odrediNajuspjesnijegStudentaNaGodini(Integer godina) {
 
@@ -65,7 +83,12 @@ public class FakultetRacunarstva extends ObrazovnaUstanova implements Diplomski 
         return getStudenti()[lastIndex];
     }
 
-    //DONE
+    /**
+     * Metoda za određivanje studenta koji je zaslužio rektorovu nagradu. Student se određuje prema najvećem prosjeku. Ako takvih studenata ima više, odabire se najmlađi student.
+     * U slućaju da ima više studenata s istim, najboljim prosjekom te su ujedino i najmlađi, baca se iznimka PostojiViseNajmadjihStudenataException.
+     * @return
+     * @throws PostojiViseNajmadjihStudenataException
+     */
     @Override
     public Student odrediStudentaZaRektorovuNagradu() throws PostojiViseNajmadjihStudenataException {
 

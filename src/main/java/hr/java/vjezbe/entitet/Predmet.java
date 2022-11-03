@@ -1,5 +1,9 @@
 package hr.java.vjezbe.entitet;
 
+/**
+ * Klasa predmet sadrži sve informacije o predmetu, od šifre, naziva, nositelja te svih studenata koji su upisani na taj predmet. Ti studenti se određuju tako da se pridodaju predmetu jedino ako
+ * su pisali jedan ispit iz tog predmeta.
+ */
 public class Predmet {
 
     private String sifra, naziv;
