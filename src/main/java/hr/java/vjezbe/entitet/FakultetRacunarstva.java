@@ -61,26 +61,25 @@ public class FakultetRacunarstva extends ObrazovnaUstanova implements Diplomski 
     @Override
     public Student odrediNajuspjesnijegStudentaNaGodini(Integer godina) {
 
-        Integer[] brojIzvrsnihOcjena = new Integer[getStudenti().length];
-        for(int i = 0;i< getIspiti().length;i++) brojIzvrsnihOcjena[i] = 0;
+        Integer indexStudenta = 0;
+        BigDecimal najboljiProsjek = BigDecimal.valueOf(0);
 
+        for(int i = 0;i< getIspiti().length;i++){
 
-        for(Ispit ispit : getIspiti()){
-            for(int i = 0;i< getStudenti().length;i++){
-                if(ispit.getStudent() == getStudenti()[i] && ispit.getOcjena() == 5){
-                    brojIzvrsnihOcjena[i]++;
-                }
+            BigDecimal temp = null;
+
+            try{
+                temp = odrediProsjekOcjenaNaIspitima(filtrirajIspitePoStudentu(getIspiti(), getStudenti()[i]));
+            }catch(NemoguceOdreditiProsjekStudentaException e){
+                System.out.println(e.getMessage());
+            }
+            if(temp.compareTo(najboljiProsjek) >= 0){
+                indexStudenta = i;
+                najboljiProsjek = temp;
             }
         }
 
-        int lastIndex = 0;
-        for(int i = brojIzvrsnihOcjena.length-1;i>-1;i--){
-            if(brojIzvrsnihOcjena[i] == 5){
-                lastIndex = i;
-            }
-        }
-
-        return getStudenti()[lastIndex];
+        return getStudenti()[indexStudenta];
     }
 
     /**
@@ -132,7 +131,7 @@ public class FakultetRacunarstva extends ObrazovnaUstanova implements Diplomski 
                 if(i == brojIstihStudenata - 1){
                     studentiZaIspisati += " i ";
                 }
-                /*Error*/studentiZaIspisati += studentiIstogProsjekaIRodjendana[i].getIme() + " " + studentiIstogProsjekaIRodjendana[i].getPrezime() + " ";
+                studentiZaIspisati += studentiIstogProsjekaIRodjendana[i].getIme() + " " + studentiIstogProsjekaIRodjendana[i].getPrezime() + " ";
 
             }
             throw new PostojiViseNajmadjihStudenataException("Pronadeno je vise najmladih studenata s istim datumom rodenja, a to su " + studentiZaIspisati);

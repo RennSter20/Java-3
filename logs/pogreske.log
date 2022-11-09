@@ -31,3 +31,13 @@ java.util.InputMismatchException: null
 java.util.InputMismatchException: null
 	at hr.java.vjezbe.glavna.Glavna.main(Glavna.java:408)
 2022-10-29 09:59:40,058 ERROR [main] h.j.v.g.Glavna [Glavna.java:383] hr.java.vjezbe.iznimke.PostojiViseNajmadjihStudenataException: Pronadeno je vise najmladih studenata s istim datumom rodenja, a to su emi fran  i Danka zupa 
+2022-11-03 16:34:46,351 ERROR [main] h.j.v.g.Glavna [Glavna.java:443] java.util.InputMismatchException
+java.util.InputMismatchException: null
+	at hr.java.vjezbe.glavna.Glavna.main(Glavna.java:443)
+2022-11-09 17:14:27,912 ERROR [main] h.j.v.g.Glavna [Glavna.java:443] java.util.InputMismatchException
+java.util.InputMismatchException: null
+	at hr.java.vjezbe.glavna.Glavna.main(Glavna.java:443)
+2022-11-09 17:18:00,224 ERROR [main] h.j.v.g.Glavna [Glavna.java:415] hr.java.vjezbe.iznimke.PostojiViseNajmadjihStudenataException: Pronadeno je vise najmladih studenata s istim datumom rodenja, a to su Emil Frankovic  i Danka Zupanovic 
+2022-11-09 17:22:45,359 ERROR [main] h.j.v.g.Glavna [Glavna.java:415] hr.java.vjezbe.iznimke.PostojiViseNajmadjihStudenataException: Pronadeno je vise najmladih studenata s istim datumom rodenja, a to su Emil Frankovic  i Danka Zupanovic 
+2022-11-09 17:26:18,930 ERROR [main] h.j.v.g.Glavna [Glavna.java:415] hr.java.vjezbe.iznimke.PostojiViseNajmadjihStudenataException: Pronadeno je vise najmladih studenata s istim datumom rodenja, a to su Emil Frankovic  i Danka Zupanovic 
+2022-11-09 17:28:13,991 ERROR [main] h.j.v.g.Glavna [Glavna.java:415] hr.java.vjezbe.iznimke.PostojiViseNajmadjihStudenataException: Pronadeno je vise najmladih studenata s istim datumom rodenja, a to su Emil Frankovic  i Danka Zupanovic 
