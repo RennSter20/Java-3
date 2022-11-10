@@ -2,7 +2,7 @@ package hr.java.vjezbe.entitet;
 
 
 /**
- * Apstraktna klasa sa varijablama ime i prezime. Nasljeđuju ju je klase Student i Profesor.
+ * Apstraktna klasa sa varijablama ime i prezime. Nasljeđuju je klase Student i Profesor.
  */
 public abstract class Osoba {
 
